@@ -3,6 +3,7 @@
  */
 
 import React, {Component, Fragment} from 'react'
+import ToDoItem from './ToDoItem'
 
 class ToDoList extends Component {
   constructor(props) {
@@ -23,10 +24,13 @@ class ToDoList extends Component {
         <ul>
           {
             this.state.list.map((item, index) => {
-              return (
-                <li key={index} onClick={() => this.handleItemDelete(index)}>{item}</li>
-                // <li key={index} onClick={() => this.handleItemDelete(index)} dangerouslySetInnerHTML={{__html: item}}></li>
-              )
+              // return (
+              //   <Fragment>
+              //     {/*<li key={index} onClick={() => this.handleItemDelete(index)}>{item}</li>*/}
+              //     {/*<li key={index} onClick={() => this.handleItemDelete(index)} dangerouslySetInnerHTML={{__html: item}}></li>*/}
+              //   </Fragment>
+              // )
+              return <ToDoItem key={index} content={item} index={index} handleItemDelete={this.handleItemDelete}/>
             })
           }
         </ul>
