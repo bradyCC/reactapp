@@ -11,13 +11,18 @@ class ToDoItem extends Component {
   }
 
   render() {
+    const { content } = this.props
     return (
-      <li dangerouslySetInnerHTML={{__html: this.props.content}} onClick={() => this.handleClick()}></li>
+      <li dangerouslySetInnerHTML={{__html: content}} onClick={this.handleClick}></li>
     )
+    // return <li dangerouslySetInnerHTML={{__html: this.props.content}} onClick={this.handleClick}></li>
+
   }
 
   handleClick = () => {
-    this.props.handleItemDelete(this.props.index)
+    const { handleItemDelete, index } = this.props
+    handleItemDelete(index)
+    // this.props.handleItemDelete(this.props.index)
   }
 }
 
