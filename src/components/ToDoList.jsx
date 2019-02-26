@@ -18,10 +18,10 @@ class ToDoList extends Component {
     return (
       <Fragment>
         <label htmlFor="insertArea">输入内容</label>
-        <input type="text" value={this.state.inputValue} id="insertArea" onChange={this.handleInputChange} />
+        <input type="text" value={this.state.inputValue} id="insertArea" onChange={this.handleInputChange} ref={(input) => this.input = input} />
         {/*<input type="text" value={this.state.inputValue} onChange={this.handleInputChangeBind.bind(this)} />*/}
         <button onClick={this.handleBtnClick}>提交</button>
-        <ul>
+        <ul ref={(ul) => this.ul = ul}>
           {
             this.getToDoItem()
             // this.state.list.map((item, index) => {
@@ -46,6 +46,7 @@ class ToDoList extends Component {
   // }
 
   handleInputChange = event => {
+    console.log(this.input.value)
     const value = event.target.value
     this.setState(() => ({
       inputValue: value
@@ -59,7 +60,9 @@ class ToDoList extends Component {
     this.setState((prevState) => ({
       list: [...prevState.list, prevState.inputValue],
       inputValue: ''
-    }))
+    }), () => {
+      console.log(this.ul.querySelectorAll('li').length)
+    })
     // this.setState({
     //   list: [...this.state.list, this.state.inputValue],
     //   inputValue: ''
@@ -82,7 +85,7 @@ class ToDoList extends Component {
   getToDoItem = () => {
     return this.state.list.map((item, index) => {
       return (
-        <ToDoItem key={index} content={item} index={index} handleItemDelete={this.handleItemDelete}/>
+        <ToDoItem key={item} content={item} index={index} handleItemDelete={this.handleItemDelete}/>
       )
     })
   }
