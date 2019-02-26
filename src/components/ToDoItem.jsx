@@ -3,6 +3,7 @@
  */
 
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 class ToDoItem extends Component {
   constructor(props) {
@@ -16,7 +17,6 @@ class ToDoItem extends Component {
       <li dangerouslySetInnerHTML={{__html: content}} onClick={this.handleClick}></li>
     )
     // return <li dangerouslySetInnerHTML={{__html: this.props.content}} onClick={this.handleClick}></li>
-
   }
 
   handleClick = () => {
@@ -24,6 +24,17 @@ class ToDoItem extends Component {
     handleItemDelete(index)
     // this.props.handleItemDelete(this.props.index)
   }
+}
+
+ToDoItem.propTyps = {
+  test: PropTypes.string.isRequired,
+  content: PropTypes.string,
+  handleItemDelete: PropTypes.func,
+  index: PropTypes.number
+}
+
+ToDoItem.defaultProps = {
+  test: 'Hello World'
 }
 
 export default ToDoItem
