@@ -11,7 +11,12 @@ class ToDoItem extends Component {
     this.state = {}
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextProps.content !== this.props.content
+  }
+
   render() {
+    console.log('child')
     const { content } = this.props
     return (
       <li dangerouslySetInnerHTML={{__html: content}} onClick={this.handleClick}></li>

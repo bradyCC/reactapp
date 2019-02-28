@@ -4,6 +4,7 @@
 
 import React, {Component, Fragment} from 'react'
 import ToDoItem from './ToDoItem'
+import axios from 'axios'
 
 class ToDoList extends Component {
   constructor(props) {
@@ -12,6 +13,16 @@ class ToDoList extends Component {
       inputValue: '',
       list: []
     }
+  }
+
+  componentDidMount() {
+    axios.get('api/todolist')
+      .then((res) => {
+        this.setState(() => ({
+          list: [...res.data]
+        }))
+      })
+      .catch(() => {console.log('error')})
   }
 
   render() {
@@ -46,7 +57,6 @@ class ToDoList extends Component {
   // }
 
   handleInputChange = event => {
-    console.log(this.input.value)
     const value = event.target.value
     this.setState(() => ({
       inputValue: value
