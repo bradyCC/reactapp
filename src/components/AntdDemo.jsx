@@ -4,9 +4,9 @@
 
 import React, { Component } from 'react'
 import 'antd/dist/antd.css';
-import { Input, Button, List } from 'antd'
 import store from '../store/index'
 import { getInputValueAction, addListItemAction, deleteListItemAction } from "../store/actionCreators";
+import AntdDemoUI from "./AntdDemoUI";
 
 // const data = [
 //   'Racing car sprays burning fuel into crowd.',
@@ -24,19 +24,13 @@ class AntdDemo extends Component {
   }
 
   render() {
-    return (
-      <div style={{marginTop: '10px', marginLeft: '10px'}}>
-        <Input value={this.state.inputValue} placeholder="todo info" style={{width: '300px', marginRight: '10px', verticalAlign: 'top'}} onChange={this.handleInputChange} />
-        <Button type="primary" onClick={this.handleBtnClick}>提交</Button>
-        <List style={{marginTop: '10px', width: '300px'}}
-          // header={<div>Header</div>}
-          // footer={<div>Footer</div>}
-          bordered
-          dataSource={this.state.list}
-          renderItem={(item, index) => (<List.Item onClick={() => this.handleItemDelete(index)}>{item}</List.Item>)}
-        />
-      </div>
-    )
+    return <AntdDemoUI
+      inputValue={this.state.inputValue}
+      list={this.state.list}
+      handleInputChange={this.handleInputChange}
+      handleStoreChange={this.handleStoreChange}
+      handleBtnClick={this.handleBtnClick}
+      handleItemDelete={this.handleItemDelete} />
   }
 
   handleInputChange = (event) => {
