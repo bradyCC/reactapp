@@ -19,6 +19,7 @@ class AntdDemo extends Component {
   }
 
   componentDidMount () {
+    //ajax请求
     axios.get('https://jsonplaceholder.typicode.com/posts')
       .then((res) => {
         console.log(res.data)

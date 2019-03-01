@@ -11,6 +11,7 @@ class ToDoItem extends Component {
     this.state = {}
   }
 
+  //组件是否更新
   shouldComponentUpdate(nextProps, nextState) {
     return nextProps.content !== this.props.content
   }
@@ -31,6 +32,7 @@ class ToDoItem extends Component {
   }
 }
 
+// props验证
 ToDoItem.propTyps = {
   test: PropTypes.string.isRequired,
   content: PropTypes.oneOfType([PropTypes.string, PropTypes.string]),
@@ -38,6 +40,7 @@ ToDoItem.propTyps = {
   index: PropTypes.number
 }
 
+// props默认值
 ToDoItem.defaultProps = {
   test: 'Hello World'
 }
