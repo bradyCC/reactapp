@@ -6,6 +6,7 @@ import React, { Component } from 'react'
 import 'antd/dist/antd.css';
 import { Input, Button, List } from 'antd'
 import store from '../store/index'
+import { getInputValueAction, addListItemAction, deleteListItemAction } from "../store/actionCreators";
 
 // const data = [
 //   'Racing car sprays burning fuel into crowd.',
@@ -32,18 +33,14 @@ class AntdDemo extends Component {
           // footer={<div>Footer</div>}
           bordered
           dataSource={this.state.list}
-          renderItem={item => (<List.Item>{item}</List.Item>)}
+          renderItem={(item, index) => (<List.Item onClick={() => this.handleItemDelete(index)}>{item}</List.Item>)}
         />
       </div>
     )
   }
 
   handleInputChange = (event) => {
-    const action = {
-      type: 'change_input_value',
-      value: event.target.value
-    }
-    store.dispatch(action)
+    store.dispatch(getInputValueAction(event.target.value))
   }
 
   handleStoreChange = () => {
@@ -51,10 +48,11 @@ class AntdDemo extends Component {
   }
 
   handleBtnClick = () => {
-    const action = {
-      type: 'add_list_item'
-    }
-    store.dispatch(action)
+    store.dispatch(addListItemAction())
+  }
+
+  handleItemDelete = (index) => {
+    store.dispatch(deleteListItemAction(index))
   }
 }
 
