@@ -5,22 +5,26 @@
 import React, { Component } from 'react'
 import 'antd/dist/antd.css';
 import store from '../store/index'
-import { getInputValueAction, addListItemAction, deleteListItemAction } from "../store/actionCreators";
+import { getInputValueAction, addListItemAction, deleteListItemAction, initStoreListActon } from "../store/actionCreators";
 import AntdDemoUI from "./AntdDemoUI";
-
-// const data = [
-//   'Racing car sprays burning fuel into crowd.',
-//   'Japanese princess to wed commoner.',
-//   'Australian walks 100km after outback crash.',
-//   'Man charged over missing wedding girl.',
-//   'Los Angeles battles huge wildfires.',
-// ]
+import axios from 'axios'
 
 class AntdDemo extends Component {
   constructor(props) {
     super(props)
+    //将store的值赋值给state
     this.state = store.getState()
+    //监听store变化, 执行相应操作
     store.subscribe(this.handleStoreChange)
+  }
+
+  componentDidMount () {
+    axios.get('https://jsonplaceholder.typicode.com/posts')
+      .then((res) => {
+        console.log(res.data)
+        store.dispatch(initStoreListActon(res.data))
+      })
+      .catch(() => {alert('error')})
   }
 
   render() {
@@ -33,18 +37,22 @@ class AntdDemo extends Component {
       handleItemDelete={this.handleItemDelete} />
   }
 
+  //input值改变时, 调用store.dispatch执行对应的action, 执行对应的reducer, 返回新的state, 通知store修改state
   handleInputChange = (event) => {
     store.dispatch(getInputValueAction(event.target.value))
   }
 
+  //当store中的值变化时, 更新组件state的值
   handleStoreChange = () => {
     this.setState(store.getState())
   }
 
+  //点击提交时, 调用store.dispatch执行对应的action, 执行对应的reducer, 返回新的state, 通知store修改state
   handleBtnClick = () => {
     store.dispatch(addListItemAction())
   }
 
+  //点击item时, 调用sotre.dispatch执行对应的action, 执行对应的reducer, 返回新的state通知store修改state
   handleItemDelete = (index) => {
     store.dispatch(deleteListItemAction(index))
   }

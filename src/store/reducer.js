@@ -2,7 +2,7 @@
  * Created by brady on 2019/3/1.
  */
 
-import { CHANGE_INPUT_VALUE, ADD_LIST_ITEM, DELETE_LIST_ITEM} from './actionTypes'
+import { CHANGE_INPUT_VALUE, ADD_LIST_ITEM, DELETE_LIST_ITEM, INIT_STORE_LIST} from './actionTypes'
 
 const defaultState = {
   inputValue: '',
@@ -27,6 +27,10 @@ export default (state = defaultState, action) => {
     case DELETE_LIST_ITEM:
       newState = JSON.parse(JSON.stringify(state))
       newState.list.splice(action.index, 1)
+      return newState
+    case INIT_STORE_LIST:
+      newState = JSON.parse(JSON.stringify(state))
+      newState.list = action.data
       return newState
     default:
       return state
