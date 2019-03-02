@@ -4,10 +4,9 @@
 
 import React, { Component } from 'react'
 import 'antd/dist/antd.css';
-import store from '../store/index'
-import { getInputValueAction, addListItemAction, deleteListItemAction, initStoreListActon } from "../store/actionCreators";
+import store from '../store/redux'
+import { getInputValueAction, addListItemAction, deleteListItemAction, getListItemAction } from "../store/redux/actionCreators";
 import AntdDemoUI from "./AntdDemoUI";
-import axios from 'axios'
 
 class AntdDemo extends Component {
   constructor(props) {
@@ -19,13 +18,7 @@ class AntdDemo extends Component {
   }
 
   componentDidMount () {
-    //ajax请求
-    axios.get('https://jsonplaceholder.typicode.com/posts')
-      .then((res) => {
-        console.log(res.data)
-        store.dispatch(initStoreListActon(res.data))
-      })
-      .catch(() => {alert('error')})
+    store.dispatch(getListItemAction())
   }
 
   render() {
