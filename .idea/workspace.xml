@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16290c5b-848a-43fd-a2f3-9d777d7e2213" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/ReactReduxDemo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReactReduxDemo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/react-redux/actionCreators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/react-redux/actionCreators.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/react-redux/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/react-redux/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/react-redux/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/react-redux/reducer.js" afterDir="false" />
-    </list>
+    <list default="true" id="16290c5b-848a-43fd-a2f3-9d777d7e2213" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,12 +9,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/store/react-redux/reducer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="302">
-              <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -37,7 +32,7 @@
         <entry file="file://$PROJECT_DIR$/src/store/react-redux/actionCreators.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -45,7 +40,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ReactReduxDemo.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
+            <state relative-caret-position="1113">
               <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
               <folding>
                 <element signature="e#42#92#0" expanded="true" />
@@ -146,11 +141,12 @@
       <updated>1551573548125</updated>
       <workItem from="1551573550915" duration="25000" />
       <workItem from="1551573579027" duration="3241000" />
+      <workItem from="1555816328563" duration="47000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3266000" />
+    <option name="totallyTimeSpent" value="3313000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -163,7 +159,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="987" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -212,20 +207,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/react-redux/actionCreators.js">
+    <entry file="file://$PROJECT_DIR$/src/store/react-redux/reducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ReactReduxDemo.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
-          <folding>
-            <element signature="e#42#92#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="302">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -236,10 +221,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/react-redux/reducer.js">
+    <entry file="file://$PROJECT_DIR$/src/store/react-redux/actionCreators.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+        <state relative-caret-position="399">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ReactReduxDemo.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1113">
+          <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
+          <folding>
+            <element signature="e#42#92#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
